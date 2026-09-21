@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Microbiology Seminar Series &mdash; NYU Grossman School of Medicine</title>
+<meta name="description" content="2026-2027 Department of Microbiology seminar series. Wednesdays at 12:30pm, ACLS West 4th Floor Conference Room. A living schedule." />
+<style>
+:root {
+  --nyu-purple: #4F2C85;
+  --nyu-deep: #2a1a49;
+  --bg-light: #f5f5f7;
+  --card-bg: #ffffff;
+  --border-subtle: #e3e3ee;
+  --text-main: #222222;
+  --text-soft: #56566a;
+  --amber-bg: #fdf6e3;
+  --amber-line: #e6d3a3;
+  --amber-ink: #7a5200;
+  --red-bg: #fdeeeb;
+  --red-line: #e6bcb1;
+  --red-ink: #9a3520;
+  --green-bg: #edf6f0;
+  --green-line: #b9ddc7;
+  --green-ink: #1f6b41;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0; padding: 0; background: var(--bg-light); color: var(--text-main); line-height: 1.55; }
+header { background: #ffffff; color: var(--nyu-purple); padding: 1.1rem 2rem 1rem;
+  border-bottom: 5px solid var(--nyu-purple);
+  display: flex; align-items: center; gap: 1.15rem; flex-wrap: wrap; }
+header .brand { flex: 0 0 auto; display: flex; align-items: center; }
+header .brand img { height: 52px; width: auto; display: block; border-radius: .3rem; }
+header .brand + .titles { border-left: 1px solid var(--border-subtle); padding-left: 1.15rem; }
+header .titles { flex: 1 1 260px; min-width: 0; }
+header h1 { margin: 0; font-size: 1.9rem; color: var(--nyu-purple); }
+header p { margin: .35rem 0 0; color: var(--text-soft); font-size: .95rem; }
+@media (max-width: 560px) {
+  header { gap: .6rem; padding: 1rem 1.15rem .9rem; }
+  header .titles { flex: 1 1 100%; }
+  header .brand + .titles { border-left: 0; padding-left: 0; }
+  header .brand img { height: 40px; }
+  header h1 { font-size: 1.5rem; }
+  nav, main, footer { padding-left: 1.15rem !important; padding-right: 1.15rem !important; }
+}
+nav { position: sticky; top: 0; background: #faf7ff; border-bottom: 1px solid #ddd4ff;
+  padding: .45rem 2rem; display: flex; gap: 1rem; flex-wrap: wrap; z-index: 10; }
+nav a { text-decoration: none; color: var(--nyu-purple); font-size: .9rem;
+  padding: .25rem .7rem; border-radius: 999px; font-weight: 500; }
+nav a:hover { background: rgba(79,44,133,.08); }
+nav a.here { background: var(--nyu-purple); color: #fff; }
+main { max-width: 1120px; margin: 0 auto; padding: 2rem 2.25rem 3rem; }
+.card { background: var(--card-bg); border-radius: .9rem; padding: 1.3rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05); border: 1px solid var(--border-subtle); }
+h2 { margin-top: 0; color: var(--nyu-purple); }
+.section-spacer { margin-top: 1.5rem; }
+.lede { max-width: 74ch; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem; margin-top: 1rem; }
+.stat { border: 1px solid var(--border-subtle); border-radius: .7rem; padding: .7rem .9rem; background: #faf7ff; }
+.stat .k { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-soft); }
+.stat .v { font-size: 1.5rem; font-weight: 700; color: var(--nyu-purple); margin-top: .15rem; }
+.stat .s { font-size: .78rem; color: var(--text-soft); line-height: 1.35; }
+.filters { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin: 1.25rem 0 1rem; }
+.fchip { font: inherit; font-size: .85rem; cursor: pointer; background: #fff; color: var(--nyu-purple);
+  border: 1px solid var(--border-subtle); border-radius: 999px; padding: .3rem .8rem; font-weight: 500; }
+.fchip:hover { border-color: var(--nyu-purple); background: rgba(79,44,133,.05); }
+.fchip[aria-pressed="true"] { background: var(--nyu-purple); border-color: var(--nyu-purple); color: #fff; }
+.fchip .ct { opacity: .65; font-size: .75rem; margin-left: .35rem; }
+.divider { width: 1px; align-self: stretch; background: var(--border-subtle); margin: 0 .3rem; }
+input[type=search] { font: inherit; font-size: .85rem; padding: .35rem .8rem; min-width: 210px;
+  border: 1px solid var(--border-subtle); border-radius: 999px; background: #fff; color: var(--text-main); }
+.gate { background: var(--amber-bg); border-left: 3px solid var(--amber-line);
+  padding: .6rem .8rem; border-radius: .3rem; }
+.gate strong { color: var(--amber-ink); }
+.live { background: var(--green-bg); border-left: 3px solid var(--green-line);
+  padding: .6rem .8rem; border-radius: .3rem; }
+.live strong { color: var(--green-ink); }
+table.plain { border-collapse: collapse; width: 100%; }
+table.plain th { text-align: left; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-soft); border-bottom: 2px solid var(--border-subtle); padding: .4rem .6rem .4rem 0; }
+table.plain td { padding: .55rem .6rem .55rem 0; border-bottom: 1px solid var(--border-subtle);
+  font-size: .9rem; vertical-align: top; }
+table.plain tr:last-child td { border-bottom: 0; }
+td.nw { white-space: nowrap; width: 1%; font-family: ui-monospace, Menlo, monospace; font-size: .8rem; }
+.sub { color: var(--text-soft); font-size: .82rem; }
+.sub2 { display: block; margin-top: .15rem; font-size: .8rem; color: var(--text-soft); }
+.tablewrap { overflow-x: auto; }
+.none { padding: 2.5rem; text-align: center; color: var(--text-soft); }
+tr.past td { opacity: .42; }
+tr.next td { background: #faf7ff; }
+tr.nosem td { background: #fbfbfd; }
+.speaker { font-weight: 600; color: var(--nyu-deep); }
+.speaker.dim { font-weight: 500; color: var(--text-soft); font-style: italic; }
+.tag { font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: .14rem .45rem; border-radius: .3rem; border: 1px solid var(--border-subtle);
+  color: var(--text-soft); background: #fbfbfd; white-space: nowrap; margin-left: .4rem;
+  display: inline-block; vertical-align: 1px; }
+.tag.next { color: #fff; background: var(--nyu-purple); border-color: var(--nyu-purple); }
+.tag.open { color: var(--green-ink); background: var(--green-bg); border-color: var(--green-line); }
+.tag.tbd { color: var(--amber-ink); background: var(--amber-bg); border-color: var(--amber-line); }
+.tag.def { color: var(--red-ink); background: var(--red-bg); border-color: var(--red-line); }
+.tag.loc { font-family: ui-monospace, Menlo, monospace; letter-spacing: 0; text-transform: none; }
+footer { border-top: 1px solid #ddd4ff; padding: 1rem 2rem; background: #faf7ff;
+  font-size: .8rem; color: #555; text-align: center; }
+footer a { color: var(--nyu-purple); }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand"><img src="assets/nyulh-logo.png" alt="NYU Langone Health"
+    onerror="this.parentNode.remove()" /></span>
+  <span class="titles">
+    <h1>Microbiology Seminar Series</h1>
+    <p><strong>2026&ndash;2027</strong> &middot; Wednesdays at 12:30pm &middot; ACLS West, 4th Floor Conference Room &mdash; unless otherwise indicated</p>
+  </span>
+</header>
+
+<nav>
+  <a href="#top" class="here">Schedule</a>
+  <a href="#defenses">Defenses</a>
+  <a href="#open">Open slots</a>
+</nav>
+
+<main id="top">
+
+  <section class="card">
+    <h2>One hour a week</h2>
+    <p class="lede">This is the hour the whole department is in the same room. Every laboratory
+      hosts, the speaker is an ambassador for the host lab, and the talk is pitched to a general
+      microbiology audience &mdash; polished work or work in progress, both welcome.</p>
+    <p class="live"><strong>This is a living schedule.</strong> It changes as slots are traded,
+      speakers are confirmed and defenses are booked. Whatever is on this page is current;
+      if something here is wrong or out of date, tell me and it gets fixed the same day.</p>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="card section-spacer" id="defenses">
+    <h2>Book your defense into this hour</h2>
+    <p class="lede">If you are defending this year, use one of these standing slots for the public
+      part of your defense. The room is booked, the department is already coming, and you get the
+      audience your work deserves rather than whoever happens to be free at 3pm on a Tuesday.</p>
+    <p class="gate"><strong>Students and advisors:</strong> pick a date below that is open or still
+      TBD, and coordinate it through the department. A defense takes priority over a TBD slot &mdash;
+      that is what the TBD is for.</p>
+  </section>
+
+  <section class="card section-spacer" id="open">
+    <h2>The empty slots are an invitation</h2>
+    <p class="lede">Slots marked <span class="tag open">open</span> have no host yet, and slots
+      marked <span class="tag tbd">needs speaker</span> have a host but no name. Either is a place
+      to bring in an outside speaker you have wanted to hear from, or to give someone in your lab
+      the floor. You do not need to wait to be asked.</p>
+  </section>
+
+  <section class="card section-spacer">
+    <h2>The schedule</h2>
+    <div class="filters" role="group" aria-label="Filter the schedule">
+      <button class="fchip" data-f="all" aria-pressed="true">All</button>
+      <button class="fchip" data-f="upcoming" aria-pressed="false">Upcoming</button>
+      <button class="fchip" data-f="confirmed" aria-pressed="false">Confirmed speaker</button>
+      <button class="fchip" data-f="tbd" aria-pressed="false">Needs a speaker</button>
+      <button class="fchip" data-f="open" aria-pressed="false">Open slots</button>
+      <button class="fchip" data-f="defense" aria-pressed="false">Defenses</button>
+      <span class="divider"></span>
+      <input type="search" id="q" placeholder="Search speaker or host&hellip;" aria-label="Search speaker or host" />
+    </div>
+    <div class="tablewrap">
+      <table class="plain">
+        <thead>
+          <tr><th>Date</th><th>Speaker</th><th>Host</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="none" id="empty" hidden>Nothing matches that filter.</div>
+  </section>
+
+</main>
+
+<footer>
+  Department of Microbiology &middot; NYU Grossman School of Medicine &middot;
+  <span id="updated"></span>
+</footer>
+
+<!-- ===================================================================
+     THE SCHEDULE LIVES HERE. To change it, edit this block and nothing
+     else. One line per session.
+        date      YYYY-MM-DD
+        speaker   name, or "TBD", or what the session is
+        host      lab or PI, "" if the slot has no host yet
+        location  "" means ACLS West 4th Floor Conference Room
+        kind      seminar | tbd | open | defense | special | none
+     =================================================================== -->
+<script type="application/json" id="schedule">
+[
+ {"date":"2026-09-23","speaker":"State of the Department Address","host":"Benjamin tenOever","location":"","kind":"special"},
+ {"date":"2026-09-30","speaker":"Nathaniel R. Landau, PhD","host":"Nathaniel Landau","location":"","kind":"seminar"},
+ {"date":"2026-10-07","speaker":"Dounia Abbadi, PhD","host":"Robert Schneider","location":"","kind":"seminar"},
+ {"date":"2026-10-14","speaker":"Simon Grassmann, MD","host":"Kamal Khanna","location":"","kind":"seminar"},
+ {"date":"2026-10-21","speaker":"Leon Hsieh","host":"Benjamin tenOever","location":"","kind":"seminar"},
+ {"date":"2026-10-28","speaker":"Benjamin Y. Winer, PhD","host":"James Lee","location":"","kind":"seminar"},
+ {"date":"2026-11-04","speaker":"Denise Ohnezeit, PhD","host":"Angus Wilson / Ian Mohr","location":"","kind":"seminar"},
+ {"date":"2026-11-11","speaker":"TBD","host":"Liat Shenhav","location":"","kind":"tbd"},
+ {"date":"2026-11-18","speaker":"Victor Torres, PhD","host":"Michael Garabedian","location":"Research Building 3-010","kind":"seminar"},
+ {"date":"2026-11-20","speaker":"Marilyn Vasquez — Thesis Defense","host":"Ana Rodriguez","location":"SB 103, 2:00pm","kind":"defense"},
+ {"date":"2026-11-25","speaker":"No Seminar — Thanksgiving Week","host":"","location":"","kind":"none"},
+ {"date":"2026-12-02","speaker":"TBD","host":"Joel Belasco","location":"","kind":"tbd"},
+ {"date":"2026-12-09","speaker":"Jim Boonyaratanakornkit, MD, PhD","host":"Anoma Nellore","location":"Research Building 3-010","kind":"seminar"},
+ {"date":"2026-12-16","speaker":"Postdocs / Students","host":"","location":"","kind":"special"},
+ {"date":"2026-12-23","speaker":"No Seminar — Christmas Week","host":"","location":"","kind":"none"},
+ {"date":"2026-12-30","speaker":"No Seminar — New Year's Week","host":"","location":"","kind":"none"},
+ {"date":"2027-01-06","speaker":"TBD","host":"Jonas Schluter","location":"","kind":"tbd"},
+ {"date":"2027-01-13","speaker":"Mark Goulian, PhD","host":"Heran Darwin","location":"Alumni Hall B","kind":"seminar"},
+ {"date":"2027-01-20","speaker":"Andrew Varble, PhD","host":"Benjamin tenOever","location":"Research Building 3-010","kind":"seminar"},
+ {"date":"2027-01-27","speaker":"TBD","host":"Mila Ortigoza","location":"","kind":"tbd"},
+ {"date":"2027-02-03","speaker":"TBD","host":"Andrew Darwin","location":"","kind":"tbd"},
+ {"date":"2027-02-10","speaker":"Leigh Miller, PhD","host":"Kamal Khanna","location":"","kind":"seminar"},
+ {"date":"2027-02-17","speaker":"TBD","host":"Adam Ratner","location":"","kind":"tbd"},
+ {"date":"2027-02-24","speaker":"Jens Maximilian Fels, PhD","host":"Max Fels","location":"","kind":"seminar"},
+ {"date":"2027-03-03","speaker":"TBD","host":"Robert Schneider","location":"","kind":"tbd"},
+ {"date":"2027-03-10","speaker":"TBD","host":"Bo Shopsin","location":"","kind":"tbd"},
+ {"date":"2027-03-17","speaker":"TBD","host":"Joel Belasco","location":"","kind":"tbd"},
+ {"date":"2027-03-24","speaker":"Ralf Duerr, MD, PhD","host":"Ralf Duerr","location":"","kind":"seminar"},
+ {"date":"2027-03-31","speaker":"TBD","host":"Michael Garabedian","location":"","kind":"tbd"},
+ {"date":"2027-04-07","speaker":"Yuranis Garcia del Castillo","host":"Ana Rodriguez","location":"Research Building 3-010","kind":"seminar"},
+ {"date":"2027-04-14","speaker":"Ramanjit Kaur","host":"Benjamin tenOever","location":"","kind":"seminar"},
+ {"date":"2027-04-21","speaker":"TBD","host":"Angus Wilson / Ian Mohr","location":"","kind":"tbd"},
+ {"date":"2027-04-28","speaker":"TBD","host":"Heran Darwin","location":"","kind":"tbd"},
+ {"date":"2027-05-05","speaker":"TBD","host":"Jonas Schluter","location":"","kind":"tbd"},
+ {"date":"2027-05-12","speaker":"No Seminar","host":"","location":"","kind":"none"},
+ {"date":"2027-05-14","speaker":"Departmental Retreat","host":"","location":"","kind":"special"},
+ {"date":"2027-05-19","speaker":"Sydney Pimentel","host":"Benjamin tenOever","location":"","kind":"seminar"},
+ {"date":"2027-05-26","speaker":"TBD","host":"","location":"","kind":"tbd"},
+ {"date":"2027-06-02","speaker":"TBD","host":"","location":"","kind":"open"},
+ {"date":"2027-06-09","speaker":"TBD","host":"","location":"","kind":"open"},
+ {"date":"2027-06-16","speaker":"TBD","host":"","location":"","kind":"open"},
+ {"date":"2027-06-23","speaker":"TBD","host":"","location":"","kind":"open"},
+ {"date":"2027-06-30","speaker":"TBD","host":"","location":"","kind":"open"}
+]
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("schedule").textContent);
+
+  // Local midnight today, so "past" flips over at the right moment in New York
+  // rather than at UTC midnight.
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  function parse(d) {
+    var p = d.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function fmt(dt) {
+    return dt.toLocaleDateString("en-US",
+      { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  }
+
+  DATA.forEach(function (r) {
+    r.dt = parse(r.date);
+    r.past = r.dt < today;
+  });
+
+  // The next real session: first future entry that is not a "no seminar" week.
+  var nextItem = DATA.filter(function (r) {
+    return !r.past && r.kind !== "none";
+  })[0];
+  if (nextItem) nextItem.isNext = true;
+
+  var counts = {
+    all: DATA.length,
+    upcoming: DATA.filter(function (r) { return !r.past && r.kind !== "none"; }).length,
+    confirmed: DATA.filter(function (r) { return r.kind === "seminar"; }).length,
+    tbd: DATA.filter(function (r) { return r.kind === "tbd"; }).length,
+    open: DATA.filter(function (r) { return r.kind === "open"; }).length,
+    defense: DATA.filter(function (r) { return r.kind === "defense"; }).length
+  };
+  var openAhead = DATA.filter(function (r) {
+    return !r.past && (r.kind === "open" || r.kind === "tbd");
+  }).length;
+
+  // ---- stats -------------------------------------------------------------
+  var stats = [
+    ["Next seminar",
+     nextItem ? fmt(nextItem.dt).replace(/,\s\d{4}$/, "") : "—",
+     nextItem ? (nextItem.speaker === "TBD" ? "Speaker still to be named"
+                                            : nextItem.speaker) : "Series complete"],
+    ["Sessions this year", String(counts.all),
+     counts.confirmed + " with a confirmed speaker"],
+    ["Slots still to fill", String(openAhead),
+     "Upcoming dates with no speaker named"],
+    ["Completely open", String(counts.open),
+     "No host assigned — yours if you want one"]
+  ];
+  document.getElementById("stats").innerHTML = stats.map(function (s) {
+    return '<div class="stat"><div class="k">' + s[0] + '</div>' +
+           '<div class="v">' + s[1] + '</div>' +
+           '<div class="s">' + s[2] + '</div></div>';
+  }).join("");
+
+  // ---- table -------------------------------------------------------------
+  var tbody = document.getElementById("rows");
+  var empty = document.getElementById("empty");
+  var filter = "all";
+  var query = "";
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function matches(r) {
+    if (filter === "upcoming" && (r.past || r.kind === "none")) return false;
+    if (filter === "confirmed" && r.kind !== "seminar") return false;
+    if (filter === "tbd" && r.kind !== "tbd") return false;
+    if (filter === "open" && r.kind !== "open") return false;
+    if (filter === "defense" && r.kind !== "defense") return false;
+    if (query) {
+      var hay = (r.speaker + " " + r.host + " " + r.location).toLowerCase();
+      if (hay.indexOf(query) === -1) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    var shown = DATA.filter(matches);
+    empty.hidden = shown.length > 0;
+    tbody.innerHTML = shown.map(function (r) {
+      var cls = [];
+      if (r.past) cls.push("past");
+      if (r.isNext) cls.push("next");
+      if (r.kind === "none") cls.push("nosem");
+
+      var tags = "";
+      if (r.isNext) tags += '<span class="tag next">Next</span>';
+      if (r.kind === "open") tags += '<span class="tag open">Open</span>';
+      if (r.kind === "tbd") tags += '<span class="tag tbd">Needs speaker</span>';
+      if (r.kind === "defense") tags += '<span class="tag def">Defense</span>';
+
+      var spCls = (r.kind === "tbd" || r.kind === "open" || r.kind === "none")
+        ? "speaker dim" : "speaker";
+      var spText = (r.kind === "tbd" || r.kind === "open")
+        ? "To be announced" : r.speaker;
+
+      var loc = r.location
+        ? '<span class="sub2">' + esc(r.location) + '</span>' : "";
+
+      return '<tr class="' + cls.join(" ") + '">' +
+        '<td class="nw">' + fmt(r.dt) + "</td>" +
+        '<td><span class="' + spCls + '">' + esc(spText) + "</span>" + tags + loc + "</td>" +
+        '<td class="sub">' + (r.host ? esc(r.host) : "—") + "</td>" +
+        "</tr>";
+    }).join("");
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".fchip"), function (b) {
+    var key = b.getAttribute("data-f");
+    if (counts[key] !== undefined && key !== "all") {
+      b.innerHTML += '<span class="ct">' + counts[key] + "</span>";
+    }
+    b.addEventListener("click", function () {
+      filter = key;
+      Array.prototype.forEach.call(document.querySelectorAll(".fchip"), function (o) {
+        o.setAttribute("aria-pressed", String(o === b));
+      });
+      render();
+    });
+  });
+
+  document.getElementById("q").addEventListener("input", function (e) {
+    query = e.target.value.trim().toLowerCase();
+    render();
+  });
+
+  document.getElementById("updated").textContent =
+    "Viewed " + today.toLocaleDateString("en-US",
+      { month: "long", day: "numeric", year: "numeric" });
+
+  render();
+
+  // Land on the next seminar if the page is opened mid-year.
+  if (nextItem && DATA.indexOf(nextItem) > 6 && !location.hash) {
+    var row = tbody.querySelector("tr.next");
+    if (row) row.scrollIntoView({ block: "center" });
+  }
+})();
+</script>
+</body>
+</html>
